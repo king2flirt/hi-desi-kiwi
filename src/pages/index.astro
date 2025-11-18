@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ThreeBackground from '../components/ThreeBackground.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
+import Skills from '../components/Skills.astro';
 import BlogCard from '../components/BlogCard.astro';
 
 const allBlogPosts = await getCollection('blog');
@@ -13,11 +13,11 @@ const recentPosts = allBlogPosts
   .slice(0, 3);
 ---
 
-<BaseLayout title="Darkness - Dark Theme">
+<BaseLayout title="Darkness - Web Developer & Creative Coder">
   <ThreeBackground />
   <Navigation />
   <Hero />
-  <Features />
+  <Skills />
 
   <section class="recent-posts">
     <div class="container">
@@ -39,19 +39,11 @@ const recentPosts = allBlogPosts
       </div>
     </div>
   </section>
-
-  <section class="cta">
-    <div class="container">
-      <h2 class="cta-title shimmer-text">Welcome to the Darkness</h2>
-      <p class="cta-text">This theme is an experimental project that pushes motion and beauty to the extreme.</p>
-      <button class="btn btn-primary">Explore Further</button>
-    </div>
-  </section>
 </BaseLayout>
 
 <style>
   .recent-posts {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 8rem;
     position: relative;
   }
 
@@ -83,30 +75,6 @@ const recentPosts = allBlogPosts
 
   .view-all {
     text-align: center;
-  }
-
-  .cta {
-    padding: 8rem 2rem;
-    text-align: center;
-    position: relative;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .cta-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    margin-bottom: 1.5rem;
-  }
-
-  .cta-text {
-    font-size: 1.2rem;
-    color: var(--color-text-dim);
-    margin-bottom: 2rem;
-    line-height: 1.8;
   }
 
   .btn {
