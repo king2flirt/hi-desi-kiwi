@@ -9,7 +9,9 @@ interface Props {
   featured?: boolean;
 }
 
+const base = import.meta.env.BASE_URL;
 const { title, description, image, link, github, tags, featured } = Astro.props;
+const imageSrc = image?.startsWith('/') ? `${base}${image.slice(1)}` : image;
 ---
 
 <article class="project-card" class:list={{ featured }}>
@@ -17,7 +19,7 @@ const { title, description, image, link, github, tags, featured } = Astro.props;
     {featured && <span class="featured-badge">Featured</span>}
     {image && (
       <div class="project-image">
-        <img src={image} alt={title} loading="lazy" />
+        <img src={imageSrc} alt={title} loading="lazy" />
       </div>
     )}
     <h3 class="project-title">{title}</h3>
