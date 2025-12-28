@@ -1,0 +1,168 @@
+---
+// Skills/Tech Stack section
+---
+
+<section class="skills">
+  <div class="container">
+    <h2 class="section-title shimmer-text">Skills & Technologies</h2>
+    <p class="section-subtitle">Tools and technologies I work with</p>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3 class="category-title">Frontend</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Astro</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Three.js</span>
+          <span class="skill-tag">CSS Animations</span>
+          <span class="skill-tag">WebGL</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="category-title">Design & Animation</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Motion Design</span>
+          <span class="skill-tag">3D Graphics</span>
+          <span class="skill-tag">UI/UX</span>
+          <span class="skill-tag">Dark Themes</span>
+          <span class="skill-tag">Particle Systems</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="category-title">Tools & Workflow</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">npm/pnpm</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Chrome DevTools</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="category-title">Currently Learning</h3>
+        <div class="skill-list">
+          <span class="skill-tag learning">GLSL Shaders</span>
+          <span class="skill-tag learning">WebGPU</span>
+          <span class="skill-tag learning">React Three Fiber</span>
+          <span class="skill-tag learning">Blender</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    padding: 5rem 2rem;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-dim);
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .skill-category {
+    background: var(--color-bg-card);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .skill-category:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent-purple);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-pink));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: rgba(168, 85, 247, 0.2);
+    border-color: var(--color-accent-purple);
+    transform: translateY(-2px);
+  }
+
+  .skill-tag.learning {
+    border-color: rgba(236, 72, 153, 0.3);
+    background: rgba(236, 72, 153, 0.1);
+    position: relative;
+  }
+
+  .skill-tag.learning::after {
+    content: '📚';
+    margin-left: 0.5rem;
+  }
+
+  .skill-tag.learning:hover {
+    border-color: var(--color-accent-pink);
+    background: rgba(236, 72, 153, 0.2);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

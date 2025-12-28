@@ -4,13 +4,18 @@
 
 <section class="hero">
   <div class="hero-content">
+    <div class="greeting">Hello, I'm</div>
     <h1 class="hero-title shimmer-text">
       <span class="glitch" data-text="DARKNESS">DARKNESS</span>
     </h1>
-    <p class="hero-subtitle">A dark theme that shines through the abyss with intense motion</p>
+    <p class="hero-subtitle">Web Developer & Creative Coder</p>
+    <p class="hero-description">
+      Building immersive web experiences with Three.js, modern animations, and dark aesthetics.
+      Specializing in motion-rich interfaces that push the boundaries of what's possible on the web.
+    </p>
     <div class="hero-buttons">
-      <button class="btn btn-primary">Start Exploring</button>
-      <button class="btn btn-secondary">Learn More</button>
+      <a href="/projects" class="btn btn-primary">View Projects</a>
+      <a href="/blog" class="btn btn-secondary">Read Blog</a>
     </div>
   </div>
 
@@ -35,6 +40,15 @@
     text-align: center;
     z-index: 10;
     animation: fadeInUp 1s ease-out;
+    max-width: 900px;
+  }
+
+  .greeting {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--color-accent-purple);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    animation: fadeInUp 1s ease-out backwards;
   }
 
   .hero-title {
@@ -112,10 +126,22 @@
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: var(--color-text-dim);
-    margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease-out 0.2s backwards;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-dim);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
   }
 
   .hero-buttons {
@@ -127,12 +153,14 @@
   }
 
   .btn {
+    display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;

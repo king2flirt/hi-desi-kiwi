@@ -4,62 +4,76 @@ import ThreeBackground from '../components/ThreeBackground.astro';
 import Navigation from '../components/Navigation.astro';
 ---
 
-<BaseLayout title="About - Darkness" description="About the Darkness theme">
+<BaseLayout title="About - Darkness" description="About me and my work">
   <ThreeBackground />
   <Navigation />
 
   <main class="about-page">
     <div class="container">
-      <h1 class="page-title shimmer-text">About Darkness</h1>
+      <h1 class="page-title shimmer-text">About Me</h1>
 
       <div class="content-grid">
-        <section class="content-section">
-          <h2>About This Theme</h2>
+        <section class="content-section intro-section">
+          <h2>Hello, I'm Darkness</h2>
           <p>
-            Darkness is a heavily modified dark theme based on Astro's official template,
-            themed around darkness. It uses Three.js, CSS animations, and Astro's latest
-            features to provide a rich, motion-filled experience.
+            I'm a web developer and creative coder passionate about building immersive digital experiences.
+            My work sits at the intersection of art and technology, where I explore the possibilities of
+            modern web technologies to create visually striking, motion-rich interfaces.
+          </p>
+          <p>
+            With a deep love for dark aesthetics and smooth animations, I specialize in crafting websites
+            that aren't just functional—they're experiences that captivate and engage users from the moment
+            they land on the page.
           </p>
         </section>
 
         <section class="content-section">
-          <h2>Tech Stack</h2>
-          <ul class="tech-list">
-            <li>⚡ Astro 4.0</li>
-            <li>🌌 Three.js (3D Graphics)</li>
-            <li>🎨 CSS Animations & Transforms</li>
-            <li>✨ View Transitions API</li>
-            <li>🎭 Custom Cursor</li>
-            <li>🌈 Gradients & Blend Modes</li>
-          </ul>
-        </section>
-
-        <section class="content-section">
-          <h2>Signature Effects</h2>
-          <div class="effects-grid">
-            <div class="effect-card">
-              <h3>Particle System</h3>
-              <p>5000 glowing particles dancing in 3D space</p>
+          <h2>What I Do</h2>
+          <div class="what-i-do-grid">
+            <div class="service-card">
+              <div class="service-icon">🎨</div>
+              <h3>Creative Development</h3>
+              <p>Building unique web experiences with Three.js, WebGL, and advanced CSS animations.</p>
             </div>
-            <div class="effect-card">
-              <h3>Glitch Animation</h3>
-              <p>Cyberpunk futuristic text effects</p>
+            <div class="service-card">
+              <div class="service-icon">⚡</div>
+              <h3>Performance Optimization</h3>
+              <p>Ensuring smooth 60fps animations and optimal loading times with modern tooling.</p>
             </div>
-            <div class="effect-card">
-              <h3>Mouse Tracking</h3>
-              <p>3D camera that responds to cursor movement</p>
+            <div class="service-card">
+              <div class="service-icon">🌌</div>
+              <h3>3D Graphics</h3>
+              <p>Creating particle systems, geometric patterns, and interactive 3D elements for the web.</p>
             </div>
-            <div class="effect-card">
-              <h3>Float Animation</h3>
-              <p>All elements float softly</p>
+            <div class="service-card">
+              <div class="service-icon">🎭</div>
+              <h3>Dark UI Design</h3>
+              <p>Designing beautiful dark-themed interfaces with carefully crafted color palettes.</p>
             </div>
           </div>
         </section>
 
+        <section class="content-section">
+          <h2>My Approach</h2>
+          <p>
+            I believe that motion is emotion. Every animation, every transition, every particle movement
+            should have a purpose—to guide, to delight, or to immerse. I'm constantly pushing the boundaries
+            of what's possible on the web, experimenting with new techniques and technologies.
+          </p>
+          <p>
+            Whether it's a personal blog, a portfolio site, or a complex web application, I approach each
+            project with the same goal: create something that stands out, performs well, and provides an
+            unforgettable user experience.
+          </p>
+        </section>
+
         <section class="content-section cta-section">
-          <h2>Get Started</h2>
-          <p>This theme is fully customizable. Just change the CSS variables to create your own unique darkness.</p>
-          <a href="/" class="btn btn-primary">Back to Home</a>
+          <h2>Let's Connect</h2>
+          <p>Interested in working together or just want to chat about web animations and dark design?</p>
+          <div class="contact-buttons">
+            <a href="/projects" class="btn btn-primary">View My Work</a>
+            <a href="/blog" class="btn btn-secondary">Read My Blog</a>
+          </div>
         </section>
       </div>
     </div>
@@ -117,67 +131,65 @@ import Navigation from '../components/Navigation.astro';
   .content-section p {
     line-height: 1.8;
     color: var(--color-text-dim);
+    margin-bottom: 1rem;
   }
 
-  .tech-list {
-    list-style: none;
+  .intro-section p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .what-i-do-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .tech-list li {
-    padding: 1rem;
-    background: rgba(168, 85, 247, 0.1);
-    border-radius: 0.5rem;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
-
-  .tech-list li:hover {
-    background: rgba(168, 85, 247, 0.2);
-    transform: translateX(10px);
-  }
-
-  .effects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
   }
 
-  .effect-card {
+  .service-card {
     padding: 1.5rem;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(168, 85, 247, 0.05);
     border-radius: 0.75rem;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     transition: all 0.3s ease;
   }
 
-  .effect-card:hover {
+  .service-card:hover {
+    background: rgba(168, 85, 247, 0.1);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+    border-color: var(--color-accent-purple);
   }
 
-  .effect-card h3 {
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--color-accent-blue);
+    color: var(--color-text);
   }
 
-  .effect-card p {
+  .service-card p {
     font-size: 0.9rem;
     color: var(--color-text-dim);
+    margin: 0;
   }
 
   .cta-section {
     text-align: center;
   }
 
+  .contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
   .btn {
     display: inline-block;
-    margin-top: 2rem;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -197,6 +209,18 @@ import Navigation from '../components/Navigation.astro';
   .btn-primary:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 15px 40px rgba(168, 85, 247, 0.6);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-accent-purple);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-accent-purple);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
   }
 
   @keyframes fadeInDown {
