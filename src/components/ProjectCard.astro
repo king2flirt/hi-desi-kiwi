@@ -2,11 +2,11 @@
 interface Props {
   title: string;
   description: string;
-  image?: string;
-  link?: string;
-  github?: string;
-  tags?: string[];
-  featured?: boolean;
+  image?: string | undefined;
+  link?: string | undefined;
+  github?: string | undefined;
+  tags?: string[] | undefined;
+  featured?: boolean | undefined;
 }
 
 const base = import.meta.env.BASE_URL;
