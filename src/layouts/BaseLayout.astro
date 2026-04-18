@@ -104,7 +104,10 @@ const {
       };
 
       bindInteractiveHover();
-      document.addEventListener('astro:page-load', bindInteractiveHover);
+      if (!(window as any).__cursorHoverListenerRegistered) {
+        (window as any).__cursorHoverListenerRegistered = true;
+        document.addEventListener('astro:page-load', bindInteractiveHover);
+      }
     </script>
   </body>
 </html>

@@ -17,10 +17,10 @@ const relativePath = currentPath.replace(base.slice(0, -1), '') || '/';
       <a href={`${base}blog/`} class:list={['nav-link', { active: relativePath.startsWith('/blog') }]}>
         Blog
       </a>
-      <a href={`${base}projects/`} class:list={['nav-link', { active: relativePath === '/projects/' }]}>
+      <a href={`${base}projects/`} class:list={['nav-link', { active: relativePath.startsWith('/projects') }]}>
         Projects
       </a>
-      <a href={`${base}about/`} class:list={['nav-link', { active: relativePath === '/about/' }]}>
+      <a href={`${base}about/`} class:list={['nav-link', { active: relativePath.startsWith('/about') }]}>
         About
       </a>
     </div>
@@ -41,8 +41,8 @@ const relativePath = currentPath.replace(base.slice(0, -1), '') || '/';
   <div class="mobile-menu-content">
     <a href={base} class:list={['mobile-nav-link', { active: relativePath === '/' }]}>Home</a>
     <a href={`${base}blog/`} class:list={['mobile-nav-link', { active: relativePath.startsWith('/blog') }]}>Blog</a>
-    <a href={`${base}projects/`} class:list={['mobile-nav-link', { active: relativePath === '/projects/' }]}>Projects</a>
-    <a href={`${base}about/`} class:list={['mobile-nav-link', { active: relativePath === '/about/' }]}>About</a>
+    <a href={`${base}projects/`} class:list={['mobile-nav-link', { active: relativePath.startsWith('/projects') }]}>Projects</a>
+    <a href={`${base}about/`} class:list={['mobile-nav-link', { active: relativePath.startsWith('/about') }]}>About</a>
   </div>
 </div>
 
