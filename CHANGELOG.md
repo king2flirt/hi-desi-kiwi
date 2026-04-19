@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-04-19
+
 ### Fixed
 - `ThreeBackground` canvas being duplicated in `BaseLayout` (both layout and page templates rendered `<canvas id="three-canvas">`) ([#14](https://github.com/kpab/astro-darkness/issues/14))
 - Cursor follower hover handlers not re-binding on View Transitions page navigation ([#14](https://github.com/kpab/astro-darkness/issues/14))
 - Internal links 404'ing under `trailingSlash: 'always'` — added trailing slashes to nav / hero / blog card / back-to-blog / CTA links and updated Navigation active-path comparison ([#15](https://github.com/kpab/astro-darkness/issues/15))
+
+### Changed
+- Added `.astro/` to `.gitignore` and untracked previously committed generated files (types, content schemas, cache) so dev server output no longer appears as diffs ([#18](https://github.com/kpab/astro-darkness/pull/18))
 
 ## [1.0.1] - 2026-03-28
 
@@ -49,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - @astrojs/rss for feed generation
 - @astrojs/sitemap for SEO optimization
 
-[unreleased]: https://github.com/kpab/astro-darkness/compare/v1.0.1...HEAD
+[unreleased]: https://github.com/kpab/astro-darkness/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/kpab/astro-darkness/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/kpab/astro-darkness/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/kpab/astro-darkness/releases/tag/v1.0.0
