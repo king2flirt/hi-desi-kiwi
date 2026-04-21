@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+
+const src = '/profile.jpg'; 
+---
+
+<div class="flex size-36 items-center justify-center overflow-hidden rounded-full border-4 border-gray-950 md:size-40 p-1 bg-white">
+    <Image
+        src={src}
+        alt="Portrait of Umakant Chaudhari"
+        width={450} 
+        height={450}
+        class="h-full w-full object-contain object-center scale-122"
+        loading="eager"
+    />
+</div>

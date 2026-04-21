@@ -1,0 +1,75 @@
+---
+/**
+ * Social Links with Icons and Names
+ */
+---
+<div class="social-grid">
+    <a href="https://www.instagram.com/umakantsc" class="social-card instagram">
+        <span class="icon">📸</span>
+        <span class="name">Instagram</span>
+    </a>
+
+    <a href="mailto:eumakant@gmail.com" class="social-card email">
+        <span class="icon">✉️</span>
+        <span class="name">Email</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/umakantsc/" class="social-card linkedin">
+        <span class="icon">💼</span>
+        <span class="name">LinkedIn</span>
+    </a>
+
+    <a href="https://wa.me/64225005015" class="social-card whatsapp">
+        <span class="icon">💬</span>
+        <span class="name">WhatsApp</span>
+    </a>
+
+    <a href="http://facebook.com/2heaven" class="social-card facebook">
+        <span class="icon">👤</span>
+        <span class="name">Facebook</span>
+    </a>
+</div>
+
+<style>
+    .social-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .social-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.1); /* Glass effect */
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.25);
+        border-color: #1a1a1a;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    /* Subtle brand colors on hover if you want them */
+    .instagram:hover { border-color: #E1306C; color: #E1306C; }
+    .linkedin:hover { border-color: #0077B5; color: #0077B5; }
+    .whatsapp:hover { border-color: #25D366; color: #25D366; }
+</style>
