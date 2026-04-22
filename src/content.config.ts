@@ -1,8 +1,13 @@
 import { defineCollection, z } from 'astro:content';
 
-// Define the Project schema so your code remains type-safe for the future
+/**
+ * PROJECT COLLECTION
+ * Defined here for future use. When you are ready to add projects:
+ * 1. Create the folder: src/content/projects/
+ * 2. Add the loader line back in: loader: glob({ pattern: "**\/*.md", base: "./src/content/projects" })
+ * 3. Add 'projects' to the collections export at the bottom.
+ */
 const projects = defineCollection({
-  // We remove the 'loader' for now so Astro doesn't look for a missing folder
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -14,8 +19,6 @@ const projects = defineCollection({
   }),
 });
 
-// Exporting an empty object or a collection without a loader 
-// will prevent the "Unexpected *" error during the build.
-export const collections = { 
-  // projects 
-};
+// Exporting an empty object prevents Astro from attempting to sync 
+// directories that don't exist in your current repository.
+export const collections = {};
