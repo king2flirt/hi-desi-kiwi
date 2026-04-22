@@ -9,9 +9,11 @@ interface Props {
 }
 
 const base = import.meta.env.BASE_URL;
+
+// Tagline: Grounded in Care. Powered by Linux. Guided by Soul
 const {
-  title = 'Darkness - Dark Theme',
-  description = 'An intense motion-filled dark theme Astro site'
+  title = 'Umakant Chaudhari | Grounded in Care. Powered by Linux. Guided by Soul',
+  description = 'Professional Healthcare & Disability Support, Linux HomeLab Enthusiast, and Spiritual Practitioner based in Christchurch, NZ.'
 } = Astro.props;
 ---
 
@@ -21,40 +23,45 @@ const {
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    
+    <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+    
     <meta name="generator" content={Astro.generator} />
-    <!-- Google Fonts: Space Grotesk + DM Sans -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
     <title>{title}</title>
     <ClientRouter />
   </head>
   <body>
     <div class="cursor-follower"></div>
     <ThreeBackground />
+    
     <div id="page-content">
       <slot />
     </div>
 
-    <style>
+    <style is:global>
       #page-content {
         position: relative;
         z-index: 1;
       }
 
-      /* Custom cursor */
+      /* Custom cursor styles */
       .cursor-follower {
         width: 20px;
         height: 20px;
-        border: 2px solid var(--color-accent-purple);
+        border: 2px solid #3b82f6; /* Your primary blue */
         border-radius: 50%;
         position: fixed;
         pointer-events: none;
         z-index: 9999;
-        transition: all 0.1s ease;
+        transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
         transform: translate(-50%, -50%);
         mix-blend-mode: difference;
+        display: block;
       }
 
       .cursor-follower::before {
@@ -65,35 +72,36 @@ const {
         transform: translate(-50%, -50%);
         width: 4px;
         height: 4px;
-        background: var(--color-accent-pink);
+        background: #ec4899; /* Accent Pink */
         border-radius: 50%;
+      }
+
+      /* Disable custom cursor on mobile touch devices */
+      @media (hover: none) {
+        .cursor-follower {
+          display: none;
+        }
       }
     </style>
 
     <script>
-      // Custom cursor: mousemove は1度だけ登録
-      if (!(window as any).__cursorFollowerInitialized) {
-        (window as any).__cursorFollowerInitialized = true;
-        document.addEventListener('mousemove', (e) => {
-          const cursor = document.querySelector('.cursor-follower') as HTMLElement | null;
-          if (!cursor) return;
+      const initCursor = () => {
+        const cursor = document.querySelector('.cursor-follower') as HTMLElement | null;
+        if (!cursor) return;
+
+        // Move cursor with mouse
+        window.addEventListener('mousemove', (e) => {
           cursor.style.left = e.clientX + 'px';
           cursor.style.top = e.clientY + 'px';
         });
-      }
 
-      // ホバー拡大はページ遷移後にも再バインドする必要がある
-      const bindInteractiveHover = () => {
-        const cursor = document.querySelector('.cursor-follower') as HTMLElement | null;
-        if (!cursor) return;
-        const interactiveElements = document.querySelectorAll('a, button, .card');
+        // Hover expand effect for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .pillar-card, .contact-pill, .nav-link');
         interactiveElements.forEach((el) => {
-          if ((el as any).__cursorHoverBound) return;
-          (el as any).__cursorHoverBound = true;
           el.addEventListener('mouseenter', () => {
-            cursor.style.width = '40px';
-            cursor.style.height = '40px';
-            cursor.style.backgroundColor = 'rgba(168, 85, 247, 0.2)';
+            cursor.style.width = '50px';
+            cursor.style.height = '50px';
+            cursor.style.backgroundColor = 'rgba(59, 130, 246, 0.15)';
           });
           el.addEventListener('mouseleave', () => {
             cursor.style.width = '20px';
@@ -103,11 +111,9 @@ const {
         });
       };
 
-      bindInteractiveHover();
-      if (!(window as any).__cursorHoverListenerRegistered) {
-        (window as any).__cursorHoverListenerRegistered = true;
-        document.addEventListener('astro:page-load', bindInteractiveHover);
-      }
+      // Initialization for Astro View Transitions
+      initCursor();
+      document.addEventListener('astro:page-load', initCursor);
     </script>
   </body>
 </html>
